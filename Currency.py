@@ -11,14 +11,10 @@ def get_details(country_name):
 
     # country_name = str(country_name.title())
     input_file = open('currency_details.txt', mode='r', encoding='UTF-8')  # open file for reading
-    document_end = "false"
-    country = "false"
-    line_count = 0
-    input_file = open('currency_details.txt', mode='r', encoding='UTF-8') #open file
 
     for line in input_file:
 
-        parts = line.strip().split(',')
+        parts = line.strip().split(',')         #split into separate strings by removing ',' and white space at the end
 
         if parts[0] == country_name:
             input_file.close()
