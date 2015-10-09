@@ -9,7 +9,7 @@ def convert(amount, home_currency_code, location_currency_code):
         #print(result[result.index('result'):])
         split_string = split_string.split(">")
         split_string = split_string[2].split(" ")
-        return print("$", split_string[0])
+        return float(split_string[0])
 
     except:
         return -1
@@ -38,3 +38,4 @@ print(details)
 
 value = convert(input("Enter amount: "), input("Enter home currency code: "), input("Enter location currency code: "))
 print(value)
+
