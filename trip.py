@@ -1,5 +1,7 @@
 __author__ = 'Lauren Hanran'
 
+import time # importing the built in function of Time for the class details
+
 class Error(Exception):
 
     def __init__(self, value):
@@ -12,7 +14,7 @@ class Error(Exception):
 
 
 class Country:
-    """ Takes amount of money and returns money rounded to nearest cent"""
+    """ Takes amount of money and returns it rounded to nearest cent"""
     def __init__(self, name, country_code, currency_symbol):
         self.country_name = name
         self.country_code = country_code
@@ -22,7 +24,7 @@ class Country:
         return self.currency_symbol + str(format(float(money), '.1f'))
 
     def __str__(self):
-        return "Country. details" + str(self.country_name, self.country_code, self.currency_symbol)
+        return "Country details" + str(self.country_name, self.country_code, self.currency_symbol)
 
 
 class Details:
@@ -43,3 +45,5 @@ class Details:
     def is_empty(self, ):
         return ()
 
+country_details = Country(input("enter Country name: "), input("enter Country code: "), input("enter currency symbol: "))
+# create first object of country class

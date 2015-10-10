@@ -7,15 +7,15 @@ def convert(amount, home_currency_code, location_currency_code):
         result = web_utility.load_page(url)
         split_string = result[result.index('result'):]
         # print(result[result.index('result'):])
-        split_string = split_string.split(">")
-        split_string = split_string[2].split(" ")
+        split_string = split_string.split(">")  # split the function into parts by using '>'
+        split_string = split_string[2].split(" ")  # split the parts again into smaller sections
         return float(split_string[0])
 
-    except:
+    except:             # if there is any error, eg. page doesn't load, it will return -1
         return -1
 
 
-def get_details(country_name):
+def get_details(country_name):  # get the country name as a string and return the value as a tuple in parts
 
     country_name = str(country_name.title())
     input_file = open('currency_details.txt', mode='r', encoding='UTF-8')  # open file for reading
