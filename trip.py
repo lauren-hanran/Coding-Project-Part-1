@@ -1,5 +1,4 @@
-# need classes
-# try and except
+__author__ = 'Lauren Hanran'
 
 class Error(Exception):
 
@@ -9,7 +8,7 @@ class Error(Exception):
 
     def amount(self, amount):
         if amount < 0 or amount != int:
-            print ("Sorry not a valid amount")
+            print("Sorry not a valid amount")
 
 
 class Country:
@@ -20,15 +19,10 @@ class Country:
         self.currency_symbol = currency_symbol
 
     def round_money(self, money):
-        print(self.amount)
         return self.currency_symbol + str(format(float(money), '.1f'))
 
     def __str__(self):
-        return "Country. details" + str(self.country_name, self.country_code, self.currency_symbol
-
-
-change something
-
+        return "Country. details" + str(self.country_name, self.country_code, self.currency_symbol)
 
 
 class Details:
@@ -41,7 +35,6 @@ class Details:
         self.date_string = []
 
     def add_details(self, country_name, start_date, end_date):
-        self.country_name = []
         self.locations.append(country_name)
 
     def current_country(self, date_string):

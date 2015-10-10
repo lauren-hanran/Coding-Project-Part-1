@@ -6,7 +6,7 @@ def convert(amount, home_currency_code, location_currency_code):
     try:
         result = web_utility.load_page(url)
         split_string = result[result.index('result'):]
-        #print(result[result.index('result'):])
+        # print(result[result.index('result'):])
         split_string = split_string.split(">")
         split_string = split_string[2].split(" ")
         return float(split_string[0])
@@ -35,4 +35,3 @@ print(details)
 
 value = convert(input("Enter amount: "), input("Enter home currency code: "), input("Enter location currency code: "))
 print(value)
-
