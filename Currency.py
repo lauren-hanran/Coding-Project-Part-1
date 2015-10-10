@@ -28,10 +28,7 @@ def get_details(country_name):
             return tuple(parts)
 
     input_file.close()
-    return ( )
-
-
-
+    return ()
 
 details = get_details(input("Enter Country Name: "))
 print(details)
