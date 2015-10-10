@@ -24,11 +24,26 @@ class Country:
 
 
 class Details:
-    def __init__(self, places):
+
+    def __init__(self, locations):
+        self.places = locations
         self.places = []
+        country_name = str(country_name)
 
     def add_place(self, place):
         self.places.append(place)
+
+    def add_details(self, country_name, start_date, end_date):
+        self.country_name = []
+        self.country_name.append(country_name)
+
+    def current_country(self, date_string):
+        #do something to make string in date format
+
+    def is_empty(self, ):
+
+
+
 
 
 
