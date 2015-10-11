@@ -30,16 +30,29 @@ def get_details(country_name):  # get the country name as a string and return th
     input_file.close()
     return ()
 
-details = get_details(input("Enter Country Name: "))
-print(details)
-details_2 = get_details(input("Enter Second Country Name: "))
-print(details_2)
-
-value = convert(input("Enter amount: "), input("Enter home currency code: "), input("Enter location currency code: "))
-print(value)
+# details = get_details(input("Enter Country Name: "))
+# print(details)
+# details_2 = get_details(input("Enter Second Country Name: "))
+# print(details_2)
+#
+# value = convert(input("Enter amount: "), input("Enter home currency code: "), input("Enter location currency code: "))
+# print(value)
 
 # Test Code
-if __name__ == "__main-_":
-    main()
 
-print("invalid conversion")
+
+def main():
+    test_1 = convert(10, "AUD", "AUD")
+    test_2 = convert(10, "AUD", "BLA")
+    test_3 = convert(10, "BLA", "AUD")
+    test_4 = convert(14.95, "AUD", "SAR")
+    test_5 = convert(41.12, "SAR", "AUD")
+    print("invalid conversion", " ", test_1)
+    print("invalid conversion", " ", test_2)
+    print("invalid conversion", " ", test_3)
+    print("valid conversion", " ", test_4)
+    print("valid conversion reverse", " ", test_5)
+
+
+if __name__ == "__main__":
+    main()

@@ -30,11 +30,11 @@ class Details:
         self.locations.append(country_name)  # add country name to list
 
     def current_country(self, date_string):
-        self.date_string =
+        self.date_string = "YYYY"
 
     def is_empty(self):
-        return ()
+        return "Locations is empty"
 
-country_details = Country(input("enter Country name: "), input("enter Country code: "), input("enter currency symbol: ")).round_money(100)
+country_details = Country(input("enter Country name: "), input("enter Country code: "), input("enter currency symbol: ")).round_money(100.10)
 print(country_details)
 # create first object of country class
