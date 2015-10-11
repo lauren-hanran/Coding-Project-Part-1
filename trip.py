@@ -24,7 +24,7 @@ class Country:
 
 class Details:
 
-    def __init__(self, locations):
+    def __init__(self):
         self.locations = []
 
     def add(self, country_name, start_date, end_date):
@@ -56,6 +56,6 @@ class Details:
 
 # country_details = Country(input("enter Country name: "), input("enter Country code: "), input("enter currency symbol: ")).round_money(100.10)
 # print(country_details)  # create first object of country class
-details = Details
+details = Details()
 holiday_details = details.add("Australia", "19/12/2015", "31/12/2015")
 print(holiday_details)
