@@ -32,6 +32,8 @@ def get_details(country_name):  # get the country name as a string and return th
 
 details = get_details(input("Enter Country Name: "))
 print(details)
+details_2 = get_details(input("Enter Second Country Name: "))
+print(details_2)
 
 value = convert(input("Enter amount: "), input("Enter home currency code: "), input("Enter location currency code: "))
 print(value)

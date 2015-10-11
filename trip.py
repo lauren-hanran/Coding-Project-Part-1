@@ -1,6 +1,6 @@
 __author__ = 'Lauren Hanran'
 
-import time # importing the built in function of Time for the class details
+import URLError
 
 class Error(Exception):
 
