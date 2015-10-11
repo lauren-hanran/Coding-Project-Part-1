@@ -28,13 +28,19 @@ class Details:
 
     def add_details(self, country_name, start_date, end_date):
         self.locations.append(country_name)  # add country name to list
+        tuple_details = (country_name, start_date, end_date)
+        self.locations.append(tuple_details)
 
     def current_country(self, date_string):
-        self.date_string = "YYYY"
+        for part in self.locations:
+            if part[1] < date_string < part[2]:
+                return part[0]
 
     def is_empty(self):
-        return "Locations is empty"
+        return self.locations == []
 
 country_details = Country(input("enter Country name: "), input("enter Country code: "), input("enter currency symbol: ")).round_money(100.10)
 print(country_details)
+
+holiday_details = ("Australia", "19/12/2015", "31/12/2015")
 # create first object of country class

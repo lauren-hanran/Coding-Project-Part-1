@@ -47,13 +47,15 @@ def main(): #Test that the functions are working properly
     test_3 = convert(10, "BLA", "AUD")
     test_4 = convert(14.95, "AUD", "SAR")
     test_5 = convert(41.12, "SAR", "AUD")
-    test_6 = get_details("Blank")
+    test_6 = get_details("America")
+    test_7 = get_details("Saudi Arabia")
     print("invalid conversion", "10 AUD -> AUD ", test_1)
     print("invalid conversion", "10 AUD -> BLA ", test_2)
     print("invalid conversion", "10 BLA -> AUD ", test_3)
     print("valid conversion", "14.95 AUD -> SAR ", test_4)
     print("valid conversion reverse", "41.12 SAR -> AUD ", test_5)
-    print("Invalid details", " Blank ", test_6)
+    print("invalid details", " America ", test_6)
+    print("valid details", " Saudi Arabia ", test_7)
 
 
 if __name__ == "__main__":
