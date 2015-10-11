@@ -11,17 +11,17 @@ def convert(amount, home_currency_code, location_currency_code):
         split_string = split_string[2].split(" ")  # split the parts again into smaller sections
         return float(split_string[0])
 
-    except:             # if there is any error, eg. page doesn't load, it will return -1
+    except:             # if there is any error, eg. page doesn't load, will return -1
         return -1
 
 
 def get_details(country_name):  # get the country name as a string and return the value as a tuple in parts
 
-    country_name = str(country_name.title())
+    country_name = str(country_name.title())  # Capitalise first letter of each word to match file layout
     input_file = open('currency_details.txt', mode='r', encoding='UTF-8')  # open file for reading
 
     for line in input_file:
-        parts = line.strip().split(',')
+        parts = line.strip().split(',') # Delete blank spaces and split into parts
 
         if parts[0] == country_name:
             input_file.close()
@@ -41,17 +41,19 @@ def get_details(country_name):  # get the country name as a string and return th
 # Test Code
 
 
-def main():
+def main(): #Test that the functions are working properly
     test_1 = convert(10, "AUD", "AUD")
     test_2 = convert(10, "AUD", "BLA")
     test_3 = convert(10, "BLA", "AUD")
     test_4 = convert(14.95, "AUD", "SAR")
     test_5 = convert(41.12, "SAR", "AUD")
-    print("invalid conversion", " ", test_1)
-    print("invalid conversion", " ", test_2)
-    print("invalid conversion", " ", test_3)
-    print("valid conversion", " ", test_4)
-    print("valid conversion reverse", " ", test_5)
+    test_6 = get_details("Blank")
+    print("invalid conversion", "10 AUD -> AUD ", test_1)
+    print("invalid conversion", "10 AUD -> BLA ", test_2)
+    print("invalid conversion", "10 BLA -> AUD ", test_3)
+    print("valid conversion", "14.95 AUD -> SAR ", test_4)
+    print("valid conversion reverse", "41.12 SAR -> AUD ", test_5)
+    print("Invalid details", " Blank ", test_6)
 
 
 if __name__ == "__main__":
