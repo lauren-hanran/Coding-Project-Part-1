@@ -1,16 +1,10 @@
 __author__ = 'Lauren Hanran'
 
-import URLError
 
 class Error(Exception):
 
     def __init__(self, value):
         super(). __init__(value)
-        self.value = value
-
-    def amount(self, amount):
-        if amount < 0 or amount != int:
-            print("Sorry not a valid amount")
 
 
 class Country:
@@ -21,29 +15,26 @@ class Country:
         self.currency_symbol = currency_symbol
 
     def round_money(self, money):
-        return self.currency_symbol + str(format(float(money), '.1f'))
+        return self.currency_symbol + str(format(float(money), '.2f'))
 
     def __str__(self):
-        return "Country details" + str(self.country_name, self.country_code, self.currency_symbol)
+        return "Country details: " + "{} {} {}".format(str(self.country_name), str(self.country_code), str(self.currency_symbol))
 
 
 class Details:
 
     def __init__(self, locations):
         self.locations = []
-        self.country_name = locations
-        self.start_date = []
-        self.end_date = []
-        self.date_string = []
 
     def add_details(self, country_name, start_date, end_date):
-        self.locations.append(country_name)
+        self.locations.append(country_name)  # add country name to list
 
     def current_country(self, date_string):
-        self.date_string = "YYYY/MM/DD"  # do something to make string in date format
+        self.date_string =
 
-    def is_empty(self, ):
+    def is_empty(self):
         return ()
 
-country_details = Country(input("enter Country name: "), input("enter Country code: "), input("enter currency symbol: "))
+country_details = Country(input("enter Country name: "), input("enter Country code: "), input("enter currency symbol: ")).round_money(100)
+print(country_details)
 # create first object of country class

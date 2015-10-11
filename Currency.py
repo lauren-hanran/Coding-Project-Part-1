@@ -37,3 +37,9 @@ print(details_2)
 
 value = convert(input("Enter amount: "), input("Enter home currency code: "), input("Enter location currency code: "))
 print(value)
+
+# Test Code
+if __name__ == "__main-_":
+    main()
+
+print("invalid conversion")
