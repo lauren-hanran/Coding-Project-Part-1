@@ -15,7 +15,7 @@ class Country:
     def round_money(self, money):
         return self.currency_symbol + str(format(float(money), '.2f'))
 
-    def __str__(self):
+    def __str__(self):  # overloaded
         return "Country details: " + "{} {} {}".format(str(self.country_name), str(self.country_code), str(self.currency_symbol))
 
 
