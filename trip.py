@@ -28,7 +28,7 @@ class Details:
         tuple_details = (country_name, start_date, end_date)
         # separate dates by '/' and check that dates are in the right date format before adding them to the list
         start_list = start_date.split('/')
-        end_list = (end_date.split('/'))
+        end_list = end_date.split('/')
         for element in start_list:
             if not element.isdigit():  # check that each part in the date is a number
                 raise Error("Start Date isn't formatted properly")
@@ -79,7 +79,7 @@ def main():
 
     print("\nError with date values")
     try:
-        details.add("Australia", "2015/12/19", "2015/12/19")  # year
+        details.add("Australia", "2015/12/19", "2015/12/19")
     except Error as error:
         print(error)
 
