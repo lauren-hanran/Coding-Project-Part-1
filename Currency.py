@@ -21,7 +21,7 @@ def get_details(country_name):  # get the country name as a string and return th
     input_file = open('currency_details.txt', mode='r', encoding='UTF-8')  # open file for reading
 
     for line in input_file:
-        parts = line.strip().split(',') # Delete blank spaces and split into parts
+        parts = line.strip().split(',')  # Delete blank spaces and split into parts
 
         if parts[0] == country_name:
             input_file.close()

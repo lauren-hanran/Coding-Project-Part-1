@@ -7,7 +7,7 @@ class Error(Exception):
 
 
 class Country:
-    """ Takes amount of money and returns it rounded to nearest cent"""
+    """ Takes amount of money and returns it rounded to nearest cent""" # NOT ACCURATE
     def __init__(self, name, country_code, currency_symbol):
         self.country_name = name
         self.country_code = country_code
@@ -29,7 +29,7 @@ class Details:
         tuple_details = (country_name, start_date, end_date)
         # ...
         start_list = start_date.split('/')
-        end_list = (end_date.split('/'))                # if not start_list.isdigit() and not end_list.isdigit():
+        end_list = (end_date.split('/'))
         for element in start_list:
             if not element.isdigit():
                 raise Error("Start Date isn't formatted properly")
@@ -68,13 +68,19 @@ def main():
     except Error as error:
         print(error)
 
-    print("Error with End_date")
+    print("\nError with End_date")
     try:
         details.add("Australia", "201/12/19", "2015/12/31")  # year
     except Error as error:
         print(error)
     try:
         details.add("Australia", "20156/12/19", "2015/12/31")
+    except Error as error:
+        print(error)
+
+    print("\nError with date values")
+    try:
+        details.add("Australia", "2015/12/19", "2015/12/19")  # year
     except Error as error:
         print(error)
 
