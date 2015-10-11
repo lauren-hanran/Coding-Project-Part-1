@@ -29,37 +29,56 @@ class Details:
 
     def add(self, country_name, start_date, end_date):
         tuple_details = (country_name, start_date, end_date)
+        # ...
         start_list = start_date.split('/')
         end_list = (end_date.split('/'))                # if not start_list.isdigit() and not end_list.isdigit():
         for element in start_list:
-            if element.isdigit() == False:
+            if not element.isdigit():
                 raise Error("Start Date isn't formatted properly")
         for element in end_list:
-            if element.isdigit() == False:
+            if not element.isdigit():
                 raise Error("End Date isn't formatted properly")
+        if start_date > end_date:
+            raise Error("Start date is greater than end date")
         for item in start_date:
-            if len(item[0]) == 4 and len(item[1]) == 2 and len(item[2] == 2):
-                if start_date > end_date:
-                    raise ValueError("Start date is greater than end date")
+            if len(item[0]) == 4 and len(item[1]) == 2 and len(item[2]) == 2:
                 if start_date in tuple_details:
                     raise Error("Can't travel more than one country per day")
         else:
             self.locations.append(tuple_details)
         return self.locations
 
-
     def current_country(self, date_string):
-            for part in self.locations:
-                if part[1] < date_string < part[2]:
-                    return part[0]
-
-
+        for part in self.locations:
+            if part[1] <= date_string <= part[2]:
+                return part[0]
+        raise Error("Date is not found")
 
     def is_empty(self):
         return self.locations == []
 
-# country_details = Country(input("enter Country name: "), input("enter Country code: "), input("enter currency symbol: ")).round_money(100.10)
-# print(country_details)  # create first object of country class
-details = Details()
-holiday_details = details.add("Australia", "2015/12/19", "2015/12/31")
-print(holiday_details)
+
+def main():
+    details = Details()
+    print("Error with Start_date")
+    try:
+        details.add("Australia", "201/12/19", "2015/12/31")  # when year is too short
+    except Error as error:
+        print(error)
+    try:
+        details.add("Australia", "20156/12/19", "2015/12/31")  # when year is too long
+    except Error as error:
+        print(error)
+
+    print("Error with End_date")
+    try:
+        details.add("Australia", "201/12/19", "2015/12/31")  # year
+    except Error as error:
+        print(error)
+    try:
+        details.add("Australia", "20156/12/19", "2015/12/31")
+    except Error as error:
+        print(error)
+
+if __name__ == "__main__":
+    main()
