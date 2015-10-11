@@ -2,8 +2,6 @@ __author__ = 'Lauren Hanran'
 
 
 class Error(Exception):
-    """ not really sure wtf this does """
-
     def __init__(self, value):
         super(). __init__(value)
 
