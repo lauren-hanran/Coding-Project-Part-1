@@ -57,7 +57,7 @@ class Details:
 
 def main():
 
-    print("Test for Country Class")
+    print("Test for Country Class")   #ensure that Country class works
     try:
         saudi_arabia = Country('Saudi Arabia', 'SAR', '﷼')
         print(saudi_arabia.round_money(109.987))
@@ -67,26 +67,58 @@ def main():
     details = Details()
     print("\nTest for Details Class")
     print("Error with Start_date")
-    try:
-        details.add("Australia", "201/12/19", "2015/12/31")  # when year is too short
+    try:  # when year is too short
+        details.add("Australia", "201/12/19", "2015/12/31")
     except Error as error:
         print(error)
-    try:
-        details.add("Australia", "20156/12/19", "2015/12/31")  # when year is too long
+    try:   # when year is too long
+        details.add("Australia", "20156/12/19", "2015/12/31")
+    except Error as error:
+        print(error)
+    try:  # when month is too short
+        details.add("Australia", "2015/1/19", "2015/12/31")
+    except Error as error:
+        print(error)
+    try:  # when month is too long
+        details.add("Australia", "2015/111/19", "2015/12/31")
+    except Error as error:
+        print(error)
+    try:  # when day is too short
+        details.add("Australia", "2015/12/1", "2015/12/31")
+    except Error as error:
+        print(error)
+    try:  # when day is too long
+        details.add("Australia", "2015/12/199", "2015/12/31")
     except Error as error:
         print(error)
 
     print("\nError with End_date")
-    try:
-        details.add("Australia", "201/12/19", "2015/12/31")  # year
+    try:  # when year is too short
+        details.add("Australia", "2015/12/19", "201/12/31")
     except Error as error:
         print(error)
-    try:
-        details.add("Australia", "20156/12/19", "2015/12/31")
+    try:  # when year is too long
+        details.add("Australia", "2015/12/19", "20156/12/31")
+    except Error as error:
+        print(error)
+    try:  # when month is too short
+        details.add("Australia", "2015/12/19", "2015/1/31")
+    except Error as error:
+        print(error)
+    try:  # when month is too long
+        details.add("Australia", "2015/12/19", "2015/123/31")
+    except Error as error:
+        print(error)
+    try:  # when day is too short
+        details.add("Australia", "2015/12/19", "2015/1/311")
+    except Error as error:
+        print(error)
+    try:  # when day is too long
+        details.add("Australia", "2015/12/19", "2015/123/3")
     except Error as error:
         print(error)
 
-    print("\nError with date values")
+
 
 if __name__ == "__main__":
     main()
