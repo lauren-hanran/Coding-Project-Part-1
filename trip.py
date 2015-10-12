@@ -56,7 +56,16 @@ class Details:
 
 
 def main():
+
+    print("Test for Country Class")
+    try:
+        saudi_arabia = Country('Saudi Arabia', 'SAR', '﷼')
+        print(saudi_arabia.round_money(109.987))
+    except Error as error:
+        return "Error with Country Class"
+
     details = Details()
+    print("\nTest for Details Class")
     print("Error with Start_date")
     try:
         details.add("Australia", "201/12/19", "2015/12/31")  # when year is too short
