@@ -6,7 +6,9 @@ class Error(Exception):
         super(). __init__(value)
 
 
-class Country: # holds the country details and displays information
+class Country:
+    """ holds the country details and displays information
+        Rounds an amount and adds the currency symbol to the front """
     def __init__(self, name, country_code, currency_symbol):
         self.country_name = name
         self.country_code = country_code
@@ -20,7 +22,7 @@ class Country: # holds the country details and displays information
 
 
 class Details:
-
+    """holds details of locations, checks date formatting and values """
     def __init__(self):
         self.locations = []
 
@@ -57,14 +59,14 @@ class Details:
 
 def main():
 
-    print("Test for Country Class")   #ensure that Country class works
+    print("Test for Country Class")   # ensure that Country class works
     try:
         saudi_arabia = Country('Saudi Arabia', 'SAR', '﷼')
         print(saudi_arabia.round_money(109.987))
     except Error as error:
         return "Error with Country Class"
 
-    details = Details()
+    details = Details()  # checks details class
     print("\nTest for Details Class")
     print("Error with Start_date")
     try:  # when year is too short
