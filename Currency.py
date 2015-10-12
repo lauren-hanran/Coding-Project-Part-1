@@ -40,6 +40,7 @@ def main():  # Test that the functions are working properly
     test_5 = convert(41.12, "SAR", "AUD")
     test_6 = get_details("America")
     test_7 = get_details("Saudi Arabia")
+    test_8 = get_details("")
     print("invalid conversion", "10 AUD -> AUD ", test_1)
     print("invalid conversion", "10 AUD -> BLA ", test_2)
     print("invalid conversion", "10 BLA -> AUD ", test_3)
@@ -47,6 +48,7 @@ def main():  # Test that the functions are working properly
     print("valid conversion reverse", "41.12 SAR -> AUD ", test_5)
     print("invalid details", " America ", test_6)
     print("valid details", " Saudi Arabia ", test_7)
+    print("invalid details", "Empty String ", test_8)
 
 
 if __name__ == "__main__":
