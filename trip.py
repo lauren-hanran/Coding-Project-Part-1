@@ -6,7 +6,7 @@ class Error(Exception):
         super(). __init__(value)
 
 
-class Country:
+class Country: # holds the country details and displays
     def __init__(self, name, country_code, currency_symbol):
         self.country_name = name
         self.country_code = country_code
@@ -78,10 +78,6 @@ def main():
         print(error)
 
     print("\nError with date values")
-    try:
-        details.add("Australia", "2015/12/19", "2015/12/19")
-    except Error as error:
-        print(error)
 
 if __name__ == "__main__":
     main()
