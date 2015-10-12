@@ -6,7 +6,7 @@ class Error(Exception):
         super(). __init__(value)
 
 
-class Country: # holds the country details and displays
+class Country: # holds the country details and displays information
     def __init__(self, name, country_code, currency_symbol):
         self.country_name = name
         self.country_code = country_code
